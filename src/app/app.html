@@ -1,0 +1,92 @@
+<div class="neo-mirai-page">
+  <header class="site-header">
+    <div class="logo-area">
+      <span class="logo-text">Justine Lee Larioza</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#" class="active-dot">HOME</a>
+      <a href="#proficiencies">PROFICIENCIES</a>
+      <a href="#skills">SKILLS</a>
+      <a href="#interaction">INTERACTION</a>
+    </nav>
+  </header>
+
+  <section class="hero-section">
+    <div class="vertical-subtitle">未来を描き、共に創る。</div>
+    <div class="hero-content">
+      <div class="hero-titles">
+        <h1>{{ fullName }}</h1>
+        <div class="location-badge">{{ location }}</div>
+      </div>
+      <p class="hero-description">{{ profile }}</p>
+      <div class="event-meta">
+        <span>PHONE: {{ phone }}</span>
+        <span>EMAIL: <a [href]="'mailto:' + email">{{ email }}</a></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="proficiency-section" id="proficiencies">
+    <div class="section-heading">
+      <span class="section-index">01</span>
+      <h2>TECHNICAL PROFICIENCIES</h2>
+    </div>
+    <div class="proficiency-grid">
+      @for (group of proficiencies; track group.category) {
+        <article class="proficiency-card">
+          <span class="card-num">{{ $index < 9 ? '0' : '' }}{{ $index + 1 }}</span>
+          <h3>{{ group.category }}</h3>
+          <ul>
+            @for (item of group.items; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="agenda-section">
+    <div class="agenda-left">
+      <div class="about-block">
+        <app-profile-card></app-profile-card>
+      </div>
+
+      <div id="skills">
+        <h2>KEY SKILLS</h2>
+        <p class="agenda-intro">Core technical proficiencies and digital tools</p>
+        <div class="agenda-list">
+          @for (skill of skills; track skill) {
+            <div class="agenda-item">
+              <div class="day-box">
+                <span class="day-label">SKILL</span>
+                <span class="date-label">{{ $index < 9 ? '0' : '' }}{{ $index + 1 }}</span>
+              </div>
+              <div class="agenda-bullet"><div class="dot"></div></div>
+              <div class="agenda-details"><h3>{{ skill }}</h3></div>
+            </div>
+          }
+        </div>
+      </div>
+
+      <section id="interaction" class="interaction-block">
+        <h2>ANGULAR INTERACTION</h2>
+        <div class="interaction-card">
+          <div class="interaction-body">
+            <p>{{ message }}</p>
+            <button class="click-btn" (click)="showMessage()">
+              <span>Click Me</span>
+              <span class="click-btn-icon">→</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="agenda-right">
+      <img src="reve.jpg" alt="">
+      <div class="vertical-quote">創造は、未来をつくる最初の一歩。</div>
+      <span class="photo-caption">RÊVE — AT WORK</span>
+    </div>
+  </section>
+</div>

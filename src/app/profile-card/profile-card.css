@@ -1,0 +1,28 @@
+.profile-card {
+  border: 1px solid #3a352f;
+  border-radius: 0.5rem;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.profile-card h2 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.3rem, 3vw, 1.6rem);
+  letter-spacing: 0.04em;
+  color: #f4f0ea;
+}
+
+.profile-card p {
+  color: #bbb;
+  line-height: 1.7;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid #c65324;
+  border-radius: 999px;
+  color: #c65324;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+}
